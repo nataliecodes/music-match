@@ -1,3 +1,8 @@
-<p>hey, <%= @testVariable %></p>
+<p>welcome to music match!</p>
 
-<p>register or log in <%= link_to('here', new_user_registration_path)  %> </p>
+<% if user_signed_in? %>
+  <p>hello <%= @current_user %></p>
+  <p> <%= link_to('logout', destroy_user_session_path, method: :delete) %> </p>
+<% else %>
+  <p>register or log in <%= link_to('here', new_user_registration_path) %></p>
+<% end %>
