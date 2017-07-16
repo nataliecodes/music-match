@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @testVariable = 'hey'
+    @current_user = current_user ? current_user.email : nil
   end
 end
